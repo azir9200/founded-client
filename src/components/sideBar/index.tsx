@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SidebarOptions } from "./SidebarOptions";
 import { adminLinks, userLinks } from "./constants";
 import { useUser } from "@/src/context/user.provider";
+import Image from "next/image";
 
 const Sidebar = () => {
   const { user } = useUser();
@@ -13,7 +14,13 @@ const Sidebar = () => {
     <div>
       <div className="rounded-xl bg-default-100 p-2">
         <div className="h-[330px] w-full rounded-md">
-          <h1>{user?.profilePhoto} </h1>
+          {/* <h1>{user?.profilePhoto} </h1> */}
+          <Image
+            height={100}
+            width={100}
+            src={user?.profilePhoto as string}
+            alt="profile"
+          />
         </div>
         <div className="my-3">
           <h1 className="text-2xl font-semibold">{user?.name} </h1>
