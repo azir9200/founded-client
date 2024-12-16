@@ -1,17 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 
 import loginValidationSchema from "../../../schemas/login.schema";
-
 import FXInput from "@/src/components/form/FXInput";
 import FXForm from "@/src/components/form/FXForm";
 import Loading from "@/src/components/UI/Loading";
-import { useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { useUserLogin } from "@/src/hooks/auth.hook";
 import { useUser } from "@/src/context/user.provider";
 

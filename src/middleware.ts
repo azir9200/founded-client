@@ -16,7 +16,7 @@ const roleBasedRoutes = {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  console.log(pathname);
+  // console.log(pathname);
 
   const user = await getCurrentUser();
 
@@ -38,7 +38,7 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // return NextResponse.redirect(new URL("/", request.url));
+  return NextResponse.redirect(new URL("/", request.url));
 }
 
 // See "Matching Paths" below to learn more

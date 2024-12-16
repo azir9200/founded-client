@@ -16,8 +16,6 @@ import NextLink from "next/link";
 import clsx from "clsx";
 // import { Avatar } from "@nextui-org/avatar";
 
-// import NavbarDropdown from "./NavbarDropdown";
-
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/UI/theme-switch";
 import { Logo } from "@/src/components/icons";
@@ -27,7 +25,7 @@ import NavbarDropdown from "./NavbarDropdown";
 export const Navbar = () => {
   const { user, isLoading } = useUser();
   console.log("namvbar", user);
-  console.log("user name", user?.name);
+
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -104,6 +102,3 @@ export const Navbar = () => {
   );
 };
 
-/* <NavbarItem className="hidden sm:flex gap-2">
-          <Avatar name="Azir" />
-        </NavbarItem> */

@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 "use client";
 
-// import { useUserRegistration } from "@/src/hooks/auth.hook";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@nextui-org/button";
 // import { useMutation } from "@tanstack/react-query";
@@ -13,15 +12,10 @@ import registerValidationSchema from "@/src/schemas/register.schema";
 import FXInput from "@/src/components/form/FXInput";
 import FXForm from "@/src/components/form/FXForm";
 import { useUserRegistration } from "@/src/hooks/auth.hook";
+import { toast } from "sonner";
 
 export default function RegisterPage() {
   const { mutate: handleUserRegistration, isPending } = useUserRegistration();
-
-  //   useEffect(() => {
-  //     if (isPending) {
-  //       // Handle Loading satate
-  //     }
-  //   }, [isPending]);
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const userData = {
@@ -32,11 +26,10 @@ export default function RegisterPage() {
     console.log("Inside form user data: ", userData);
 
     registerUser(userData);
+    onSuccess: () => {
+      toast.success("You have a successful user registration.");
+    };
   };
-
-  // if (isPending) {
-  //   //  handle loading state
-  // }
 
   return (
     <div className="flex h-[calc(100vh-100px)] flex-col items-center justify-center">
@@ -45,13 +38,13 @@ export default function RegisterPage() {
       <div className="w-[35%]">
         <FXForm
           //! Only for development
-          defaultValues={{
-            name: "Zaif Uddin",
-            email: "zaif@gmail.com",
-            mobileNumber: "01711223344",
-            password: "123456",
-            profilePhoto: "https://i.ibb.co/7rXf7FY/azir.jpg",
-          }}
+          // defaultValues={{
+          //   name: "Anas Uddin",
+          //   email: "zaif001@gmail.com",
+          //   mobileNumber: "01711223344",
+          //   password: "123456",
+          //   profilePhoto: "https://i.ibb.co/7rXf7FY/azir.jpg",
+          // }}
           resolver={zodResolver(registerValidationSchema)}
           onSubmit={onSubmit}
         >

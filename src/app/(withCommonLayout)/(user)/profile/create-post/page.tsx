@@ -51,6 +51,7 @@ export default function CreatePost() {
     isLoading: categoryLoading,
     isSuccess: categorySuccess,
   } = useGetCategories();
+  // console.log("profile/createPst", categoriesData);
 
   let categoryOption: { key: string; label: string }[] = [];
 
@@ -85,7 +86,7 @@ export default function CreatePost() {
 
     handleCreatePost(formData);
 
-    console.log("postData", postData);
+    // console.log("postData", postData);
   };
 
   const handleFieldAppend = () => {

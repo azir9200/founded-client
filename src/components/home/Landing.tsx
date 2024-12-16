@@ -11,12 +11,12 @@ export default function Landing() {
             aria-label="Search"
             classNames={{
               inputWrapper: "bg-default-100",
-              input: "text-sm",
+              input: "text-xl",
             }}
             placeholder="Search..."
             size="lg"
             startContent={
-              <SearchIcon className="pointer-events-none flex-shrink-0 text-base text-default-400" />
+              <SearchIcon className="pointer-events-none flex-shrink-0 text-2xl text-default-400" />
             }
             type="text"
           />

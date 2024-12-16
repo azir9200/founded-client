@@ -15,8 +15,7 @@ export default function NavbarDropdown() {
   const router = useRouter();
   const pathname = usePathname();
   const { user, setIsLoading: userLoading } = useUser();
-  console.log("drop", user?.profilePhoto);
-
+  
   const handleLogout = () => {
     logout();
     userLoading(true);
